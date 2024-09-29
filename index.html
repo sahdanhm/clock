@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+      @font-face {
+        font-family: digi;
+        src: url(fonts/ds_digital/DS-DIGII.TTF);
+      }
+      *,
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        background-color: black;
+      }
+      .num {
+        writing-mode: vertical-rl;
+        font-size: 20vh;
+        font-family: digi;
+        color: whitesmoke;
+      }
+      .container {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #ampm {
+        font-size: 10vh;
+      }
+      button[class^='btn'] {
+        margin: 3vmin;
+        writing-mode: vertical-rl;
+        background-color: transparent;
+        border: 1px dashed;
+        color: rgba(211, 211, 211, 0.641);
+        border-radius: 5px;
+        font-size: 3vmin;
+      }
+      button[class^='btn']:disabled {
+        color: whitesmoke;
+      }
+      .con-btn {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+      .sc{
+        margin-right: 2vmin;
+        flex: 0 0 5vmin;
+      }
+      .opcl {
+        margin-left: 1vmin;
+        flex: 0 0 5vmin;
+      }
+      .subcon-btn {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="con-btn">
+      <div class="subcon-btn">
+        <div class="opcl">
+          <button onclick="openFullscreen()" class="btn-fs" id="fs">
+            Open Fullscreen
+          </button>
+          <button onclick="closeFullscreen()" class="btn-fs" id="notfs">
+            Close Fullscreen
+          </button>
+        </div>
+        <div class="sc">
+          <button onclick="lockAwakeScreen()" class="btn-sc" id="keep">
+            Keep Awake
+          </button>
+          <button onclick="closeAwakeScreen()" class="btn-sc" id="notkeep">
+            NOT Keep Awake
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <p class="num" id="num">
+        <span id="hour"></span>
+        <span id="colon">:</span>
+        <span id="minute"></span>
+        <span id="ampm"></span>
+      </p>
+    </div>
+    <script src="AOD-clock.js"></script>
+  </body>
+</html>
